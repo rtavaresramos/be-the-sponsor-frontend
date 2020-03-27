@@ -1,0 +1,68 @@
+.register-logo{
+    width: 80%;
+    margin-top: 0;
+}
+
+.register-container {
+    width: 100%;
+
+    height: 100vh;
+    margin: 0 auto;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: #545454;
+
+
+  }
+
+  .register-container .content {
+    width: 100%;
+    max-width: 880px;
+    padding: 56px;
+    background: #baefbe;
+    box-shadow: 0 0 100px rgba(0, 0, 0, 0.1);
+  
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 8px;
+
+  }
+  
+  .register-container .content section {
+    width: 100%;
+    max-width: 380px;
+    margin-right: 18px;
+  }
+  
+  .register-container .content section h1 {
+    font-size: 32px;
+    margin-bottom: 16px;
+    color: #545454;
+  }
+  
+  .register-container .content section p {
+    font-size: 18px;
+    color: #545454;
+    line-height: 32px;
+  }
+  
+  .register-container .content form {
+    width: 100%;
+    max-width: 450px;
+  }
+  
+  .register-container .content form input {
+    margin-top: 8px;
+  }
+  
+  .register-container .content .input-group {
+    display: flex;
+  }
+  
+  .register-container .content .input-group input + input {
+    margin-left: 8px;
+  }

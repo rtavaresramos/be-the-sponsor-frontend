@@ -10,7 +10,7 @@
 
 }
 
-.logo{
+.logon-logo{
     width: 80%;
     margin-top: 0;
 }
@@ -34,30 +34,4 @@
     color: #545454;
 }
 
-.logon-container section.form form span{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-.logon-container section.form form a{
 
-    display: flex;
-    text-align: center;
-    text-decoration: none;
-    color: #41414d;
-    margin-top: 20px;
-    font-size: 18px;
-    font-weight: 500;
-    transition: opacity 0.2s;
-}
-
-
-.logon-container section.form form a:hover{
-
-    opacity: 0.8;
-}
-i{
-    margin-top: 20px;
-    margin-right: 8px;
-    color: #55cb88;
-}
