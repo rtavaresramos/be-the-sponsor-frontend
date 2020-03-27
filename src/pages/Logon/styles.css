@@ -1,0 +1,63 @@
+.logon-container{
+    width: 100%;
+    height: 100vh;
+    margin: 0 auto;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #baefbe;
+
+}
+
+.logo{
+    width: 80%;
+    margin-top: 0;
+}
+.home-banner{
+    height: 100%;
+    width: auto;
+    margin-right: -100px;
+
+}
+.logon-container section.form{
+    width: 100%;
+    max-width: 350px;
+    margin-right: 50px;
+
+}
+
+.logon-container section.form form h1{
+
+    font-size: 32px;
+    margin-bottom: 16px;
+    color: #545454;
+}
+
+.logon-container section.form form span{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.logon-container section.form form a{
+
+    display: flex;
+    text-align: center;
+    text-decoration: none;
+    color: #41414d;
+    margin-top: 20px;
+    font-size: 18px;
+    font-weight: 500;
+    transition: opacity 0.2s;
+}
+
+
+.logon-container section.form form a:hover{
+
+    opacity: 0.8;
+}
+i{
+    margin-top: 20px;
+    margin-right: 8px;
+    color: #55cb88;
+}
