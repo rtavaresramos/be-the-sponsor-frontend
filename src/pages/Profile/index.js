@@ -1,17 +1,20 @@
-import React from "react";
+import React, {useEffect} from "react";
 import logoImg from "../../assets/logo.png";
 import { Link } from "react-router-dom";
 import { FiPower, FiTrash2 } from "react-icons/fi";
 
 import './styles.css'
 
+import api from '../../services/api'
+
+
 export default function Profile() {
-  
+  const userName = localStorage.getItem('userName')
   return (
     <div className="profile-container">
       <header>
         <img className="logo"src={logoImg} alt="Be The Hero" />
-        <span>Bem vinda, Rodrigo</span>
+        <span>Bem vindo(a), {userName}</span>
 
         <Link to="/incidents/new" className="button">
           Cadastrar novo Curso

@@ -1,12 +1,47 @@
-import React from 'react'
-import { Link } from "react-router-dom"
+import React, {useState} from 'react'
+import { Link, useHistory } from "react-router-dom"
 import { FiArrowLeft } from "react-icons/fi"
 
 import './styles.css'
 
+import api from '../../services/api'
+
 import logoImg from "../../assets/logo.png"
 
 export default function Register() {
+  const [name, setName] = useState()
+  const [password, setPassword] = useState()
+  const [email, setEmail] = useState()
+  const [wpp, setWpp] = useState()
+  const [city, setCity] = useState()
+  const [uf, setUf] = useState()
+
+  const history = useHistory()
+  async function handleRegister(e){
+    e.preventDefault()
+
+    const data = {
+      name,
+      password,
+      email,
+      wpp,
+      city,
+      uf
+    }
+
+    
+    try{
+      const res = await api.post('users', data)
+    alert(`Seu ID de acesso é: ${res.data.id}`)  
+
+    history.push('/')
+    }catch(err){
+      alert(`Erro ao tenta se cadastrar, tente novamente mais tarde.`)
+    }
+    
+  }
+
+
   return (
     <div className="register-container">
       <div className="content">
@@ -24,40 +59,40 @@ export default function Register() {
           </Link>
         </section>
 
-        <form onSubmit="">
+        <form onSubmit={handleRegister}>
           <input
             placeholder="Nome"
-            value=""
-            onChange=""
+            value={name}
+            onChange={ e => setName(e.target.value)}
           />
           <input 
             type="password"
             placeholder="Senha"
-            value=""
-            onChange=""
+            value={password}
+            onChange={e => setPassword(e.target.value)}
           />
           <input
             type="email"
             placeholder="E-mail"
-            value=""
-            onChange=""
+            value={email}
+            onChange={e => setEmail(e.target.value)}
           />
           <input
             placeholder="WhatsApp"
-            value=""
-            onChange=""
+            value={wpp}
+            onChange={e => setWpp(e.target.value)}
           />
           <div className="input-group">
             <input
               placeholder="Cidade"
-              value=""
-              onChange=""
+              value={city}
+              onChange={ e =>setCity(e.target.value)}
             />
             <input
               placeholder="UF"
               style={{width: 80 }}
-              value=""
-              onChange=""
+              value={uf}
+              onChange={e => setUf(e.target.value)}
             />
           </div>
 
