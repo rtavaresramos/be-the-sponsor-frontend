@@ -6,7 +6,7 @@ import {FiLogIn} from 'react-icons/fi'
 import './styles.css'
 
 import logoImg from '../../assets/logo.png'
-import homeImg from '../../assets/home-banner-2.png'
+import homeImg from '../../assets/img-banner.png'
 
 import api from '../../services/api'
 
@@ -28,6 +28,7 @@ export default function Logon() {
 
             localStorage.setItem('userId', res.data.id)
             localStorage.setItem('userName', res.data.name)
+            {console.log(`Senha: ${password}`)}
 
             history.push('/profile')
         } catch(err){

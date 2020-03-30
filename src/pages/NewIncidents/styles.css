@@ -1,6 +1,6 @@
 .new-incident-logo{
     width: 80%;
-    margin-top: 0;
+    margin-bottom: 20px;
 }
 
 .new-incident-container {
@@ -16,12 +16,14 @@
     background: #545454;
 
 
+
+
   }
 
   .new-incident-container .content {
     width: 100%;
     max-width: 880px;
-    padding: 56px;
+    padding: 16px 56px;
     background: #baefbe;
     box-shadow: 0 0 100px rgba(0, 0, 0, 0.1);
   
@@ -48,6 +50,8 @@
     font-size: 14px;
     color: #737373;
     line-height: 16px;
+
+    margin-bottom: 100px;
   }
   
   .new-incident-container .content form {

@@ -31,8 +31,9 @@ export default function Register() {
 
     
     try{
-      const res = await api.post('users', data)
-    alert(`Seu ID de acesso é: ${res.data.id}`)  
+
+      api.post('users', data)
+      alert('Usuário cadastrado com sucesso')
 
     history.push('/')
     }catch(err){

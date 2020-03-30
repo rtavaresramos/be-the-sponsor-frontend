@@ -1,12 +1,51 @@
-import React from 'react'
-import { Link } from "react-router-dom"
+import React, {useState} from 'react'
+import { Link, useHistory } from "react-router-dom"
 import { FiArrowLeft } from "react-icons/fi"
 
 import './styles.css'
 
 import logoImg from "../../assets/logo.png"
 
+import api from '../../services/api'
+
 export default function NewIncidents() {
+  const [title, setTitle] = useState('')
+  const [url, setUrl] = useState('')
+  const [description, setDescription] = useState('')
+  const [motivation, setMotivation] = useState('')
+  const [value, setValue] = useState('')
+
+
+  const history = useHistory()
+  const userId = localStorage.getItem('userId')
+  const userName = localStorage.getItem('userName')
+
+  async function handleNewIncident(e) {
+    e.preventDefault()
+    
+    const data = {
+      title,
+      url,
+      description,
+      motivation,
+      value
+    }
+    try{
+      await api.post('/incidents', data, { 
+         
+        headers : { 
+          Authorization : userId,
+          Name : userName
+      }
+    
+    })
+
+      history.push('/profile')
+  } catch(err){
+      alert('Erro ao enviar novo pedido, tente novamente')
+  }
+  }
+
   return (
     <div className="new-incident-container">
       <div className="content">
@@ -14,8 +53,8 @@ export default function NewIncidents() {
           <img className="new-incident-logo" src={logoImg} alt="Be The Sponsors" />
           <h1>Cadastrar novo curso</h1>
           <p>
-            Descreva o caso detalhadamente para encontrar um Sponsor para te ajudar
-            a realizar os seus sonhos e incrementar sua educação.
+            Descreva, detalhadamente, o curso que deseja encontrar Sponsors 
+            para ajudar a incrementar sua educação.
           </p>
 
           <Link to="/profile" className="back-link">
@@ -24,22 +63,35 @@ export default function NewIncidents() {
           </Link>
         </section>
 
-        <form onSubmit="">
+        <form onSubmit={handleNewIncident}>
           <input
             placeholder="Título do curso"
-            value=""
-            onChange=""
+            value={title}
+            onChange={e => setTitle(e.target.value)}
           />
+
+          <input
+            placeholder="Link do curso"
+            value={url}
+            onChange={e => setUrl(e.target.value)}
+          />
+
           <textarea 
             placeholder="Descrição"
-            value=""
-            onChange=""
+            value={description}
+            onChange={e => setDescription(e.target.value)}
           />
+          
+          <textarea 
+            placeholder="Motivação"
+            value={motivation}
+            onChange={e => setMotivation(e.target.value)}
+          />
+        
           <input
-            type="email"
             placeholder="Valor em reais"
-            value=""
-            onChange=""
+            value={value}
+            onChange={e => setValue(e.target.value)}
           />
 
           <button className="button" type="submit">
