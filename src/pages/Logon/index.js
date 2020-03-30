@@ -28,7 +28,6 @@ export default function Logon() {
 
             localStorage.setItem('userId', res.data.id)
             localStorage.setItem('userName', res.data.name)
-            {console.log(`Senha: ${password}`)}
 
             history.push('/profile')
         } catch(err){
