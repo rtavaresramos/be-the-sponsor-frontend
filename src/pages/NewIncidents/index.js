@@ -42,7 +42,7 @@ export default function NewIncidents() {
 
       history.push('/profile')
   } catch(err){
-      alert('Erro ao enviar novo pedido, tente novamente')
+      alert('Erro ao enviar novo pedido, cheque se preencheu todos os dados e tente novamente')
   }
   }
 
@@ -67,30 +67,35 @@ export default function NewIncidents() {
           <input
             placeholder="Título do curso"
             value={title}
+            required
             onChange={e => setTitle(e.target.value)}
           />
 
           <input
             placeholder="Link do curso"
             value={url}
+            required
             onChange={e => setUrl(e.target.value)}
           />
 
           <textarea 
             placeholder="Descrição"
             value={description}
+            required
             onChange={e => setDescription(e.target.value)}
           />
           
           <textarea 
             placeholder="Motivação"
             value={motivation}
+            required
             onChange={e => setMotivation(e.target.value)}
           />
         
           <input
             placeholder="Valor em reais"
             value={value}
+            required
             onChange={e => setValue(e.target.value)}
           />
 
