@@ -64,32 +64,38 @@ export default function Register() {
           <input
             placeholder="Nome"
             value={name}
+            required
             onChange={ e => setName(e.target.value)}
           />
           <input 
             type="password"
+            required
             placeholder="Senha"
             value={password}
             onChange={e => setPassword(e.target.value)}
           />
           <input
             type="email"
+            required
             placeholder="E-mail"
             value={email}
             onChange={e => setEmail(e.target.value)}
           />
           <input
+            required
             placeholder="WhatsApp"
             value={wpp}
             onChange={e => setWpp(e.target.value)}
           />
           <div className="input-group">
             <input
+              required
               placeholder="Cidade"
               value={city}
               onChange={ e =>setCity(e.target.value)}
             />
             <input
+              required
               placeholder="UF"
               style={{width: 80 }}
               value={uf}
