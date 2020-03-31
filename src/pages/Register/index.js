@@ -61,40 +61,40 @@ export default function Register() {
         </section>
 
         <form onSubmit={handleRegister}>
-          <input
+          <input className="input"
             placeholder="Nome"
             value={name}
             required
             onChange={ e => setName(e.target.value)}
           />
-          <input 
+          <input className="input" 
             type="password"
             required
             placeholder="Senha"
             value={password}
             onChange={e => setPassword(e.target.value)}
           />
-          <input
+          <input className="input"
             type="email"
             required
             placeholder="E-mail"
             value={email}
             onChange={e => setEmail(e.target.value)}
           />
-          <input
+          <input className="input"
             required
             placeholder="WhatsApp"
             value={wpp}
             onChange={e => setWpp(e.target.value)}
           />
-          <div className="input-group">
-            <input
+          <div className=" input-group">
+            <input className="input"
               required
               placeholder="Cidade"
               value={city}
               onChange={ e =>setCity(e.target.value)}
             />
-            <input
+            <input className="input"
               required
               placeholder="UF"
               style={{width: 80 }}

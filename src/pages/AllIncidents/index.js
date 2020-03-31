@@ -134,14 +134,14 @@ export default function Profile() {
             <button
               className="contact-icon-1"
               type="button"
-              onClick={() => handleDeleteIncident(incident.id)}>
+              onClick={() => {}}>
               <FaWhatsapp size={20} color="#55cb88" />
             </button>
 
             <button
             className="contact-icon-2"
               type="button"
-              onClick={() => handleDeleteIncident(incident.id)}>
+              onClick={() => {}}>
               <FaEnvelope size={20} color="#55cb88" />
             </button>
 

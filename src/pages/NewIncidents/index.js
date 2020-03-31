@@ -3,6 +3,7 @@ import { Link, useHistory } from "react-router-dom"
 import { FiArrowLeft } from "react-icons/fi"
 
 import './styles.css'
+import '../../global.css'
 
 import logoImg from "../../assets/logo.png"
 
@@ -68,14 +69,14 @@ export default function NewIncidents() {
         </section>
 
         <form onSubmit={handleNewIncident}>
-          <input
+          <input 
             placeholder="Título do curso"
             value={title}
             required
             onChange={e => setTitle(e.target.value)}
           />
 
-          <input
+          <input 
             placeholder="Link do curso"
             value={url}
             required
@@ -96,7 +97,7 @@ export default function NewIncidents() {
             onChange={e => setMotivation(e.target.value)}
           />
         
-          <input
+          <input 
             placeholder="Valor em reais"
             value={valueBefore}
             required

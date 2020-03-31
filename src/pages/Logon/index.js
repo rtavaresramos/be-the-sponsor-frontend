@@ -29,7 +29,7 @@ export default function Logon() {
             localStorage.setItem('userId', res.data.id)
             localStorage.setItem('userName', res.data.name)
 
-            history.push('/profile')
+            history.push('/incidents/my')
         } catch(err){
             alert('Senha ou e-mail incorreto')
         }
@@ -42,11 +42,11 @@ export default function Logon() {
               <img className="logon-logo" src={logoImg}alt="Be the Sponsor"/>
               <form onSubmit={handleLogon}>
                     <h1>Faça seu logon</h1>
-                    <input placeholder="Seu e-mail"
+                    <input className="input" placeholder="Seu e-mail"
                     value={email}
                     onChange={e => setEmail(e.target.value)}
                     />
-                    <input placeholder="Sua senha" type="password"
+                    <input className="input" placeholder="Sua senha" type="password"
                     value={password}
                     onChange={e => setPassword(e.target.value)}
                     />

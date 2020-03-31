@@ -22,7 +22,7 @@ button {
     cursor: pointer;
 }
 
-form input{
+form input .input{
     margin-top: 16px;
     width: 100%;
     height: 60px;
