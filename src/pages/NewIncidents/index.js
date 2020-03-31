@@ -96,7 +96,7 @@ export default function NewIncidents() {
             placeholder="Valor em reais"
             value={value}
             required
-            onChange={e => setValue(e.target.value)}
+            onChange={e => setValue(parseFloat(e.target.value))}
           />
 
           <button className="button" type="submit">
