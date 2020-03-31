@@ -13,16 +13,19 @@ export default function NewIncidents() {
   const [url, setUrl] = useState('')
   const [description, setDescription] = useState('')
   const [motivation, setMotivation] = useState('')
-  const [value, setValue] = useState('')
+  const [valueBefore, setValueBefore] = useState('')
 
 
   const history = useHistory()
   const userId = localStorage.getItem('userId')
   const userName = localStorage.getItem('userName')
 
+
   async function handleNewIncident(e) {
     e.preventDefault()
-    
+    const value = valueBefore.replace(",", ".")
+
+
     const data = {
       title,
       url,
@@ -30,6 +33,7 @@ export default function NewIncidents() {
       motivation,
       value
     }
+
     try{
       await api.post('/incidents', data, { 
          
@@ -94,9 +98,9 @@ export default function NewIncidents() {
         
           <input
             placeholder="Valor em reais"
-            value={value}
+            value={valueBefore}
             required
-            onChange={e => setValue(parseFloat(e.target.value))}
+            onChange={e => setValueBefore(e.target.value)}
           />
 
           <button className="button" type="submit">
